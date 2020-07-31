@@ -20,6 +20,7 @@ export default function HomePage() {
       />
       <Suspense fallback={<h1>Loading</h1>}>
         {searchQuery ? (
+          // Post MVP, it would be a good idea to pass this as URL params so it's easier to go back to search
           <SearchMovies searchQuery={searchQuery} />
         ) : (
           <FeaturedMovies />

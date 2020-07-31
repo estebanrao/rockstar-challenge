@@ -18,9 +18,7 @@ function App() {
     >
       <BrowserRouter>
         <Switch>
-          <ErrorBoundary
-            fallback={<h1>An error ocurred when loading your data</h1>}
-          >
+          <ErrorBoundary>
             <Suspense fallback={<h1>Loading</h1>}>
               <Route exact path="/" component={HomePage} />
               <Route path="/details/:id" component={DetailsPage} />
