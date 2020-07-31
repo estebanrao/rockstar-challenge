@@ -1,0 +1,15 @@
+.details-content {
+  background-color: #fff;
+  width: 1015px;
+  margin: 0 auto;
+  min-height: calc(100vh - 350px);
+  padding: 1px 15px 15px;
+
+  &__data {
+    display: flex;
+
+    & dl {
+      padding-left: 15px;
+    }
+  }
+}

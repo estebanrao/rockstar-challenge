@@ -1,3 +1,25 @@
-.inactive {
-  filter: grayscale(100%);
+.rating-stars {
+  display: flex;
+  padding-bottom: 15px;
+
+  button {
+    background: none;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.inactive {
+      filter: grayscale(100%);
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
 }

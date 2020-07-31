@@ -41,13 +41,16 @@ function SearchMovies({ searchQuery }) {
 
   return (
     <>
-      <h1>
+      <h2>
+        <span role="img" aria-label="search">
+          🔍
+        </span>{' '}
         Search Results for: <strong>{searchQuery}</strong>
-      </h1>
+      </h2>
       <h3>Filter by rating</h3>
-      <ul>
+      <ul class="rating-stars">
         {[1, 2, 3, 4, 5].map((star) => (
-          <li>
+          <li class="rating-stars__item">
             <button
               onClick={() => onClickStar(star)}
               className={rating >= star ? null : 'inactive'}
@@ -60,19 +63,19 @@ function SearchMovies({ searchQuery }) {
         ))}
       </ul>
 
-      <ul>
-        {filtered.length ? (
-          filtered.map(({ id, poster_path, title }) => {
+      {filtered.length ? (
+        <ul class="movie-list">
+          {filtered.map(({ id, poster_path, title }) => {
             return (
-              <li key={id}>
+              <li key={id} class="movie-list__item">
                 <ListPoster imageUrl={poster_path} title={title} id={id} />
               </li>
             );
-          })
-        ) : (
-          <h2>Nothing to see here</h2>
-        )}
-      </ul>
+          })}
+        </ul>
+      ) : (
+        <h2>Nothing to see here</h2>
+      )}
     </>
   );
 }

@@ -13,11 +13,16 @@ export default function FeaturedMovies() {
 
   return (
     <>
-      <h1>Featured Movies sorted by popularity</h1>
-      <ul>
+      <h2>
+        <span role="img" aria-label="featured">
+          🔥
+        </span>{' '}
+        Featured Movies sorted by popularity
+      </h2>
+      <ul class="movie-list">
         {data.map(({ id, poster_path, title }) => {
           return (
-            <li key={id}>
+            <li key={id} class="movie-list__item">
               <ListPoster imageUrl={poster_path} title={title} id={id} />
             </li>
           );

@@ -1,0 +1,31 @@
+.home-header {
+  background-size: cover;
+  background-image: url(./background.jpg);
+  background-position: bottom;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  input {
+    border-radius: 15px;
+    border: 0;
+    height: 30px;
+    padding: 0 20px;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.home-content {
+  background-color: #fff;
+  width: 1015px;
+  margin: 0 auto;
+  min-height: calc(100vh - 350px);
+  padding: 1px 15px 15px;
+}

@@ -4,6 +4,8 @@ import debounce from 'lodash.debounce';
 import FeaturedMovies from '../../components/featured-movies/featured-movies.component';
 import SearchMovies from '../../components/search-movies/search-movies.component';
 
+import './home.styles.scss';
+
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -13,19 +15,25 @@ export default function HomePage() {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="Search movies"
-        onChange={(e) => debounceSetSearchQuery(e.target.value)}
-      />
-      <Suspense fallback={<h1>Loading</h1>}>
-        {searchQuery ? (
-          // Post MVP, it would be a good idea to pass this as URL params so it's easier to go back to search
-          <SearchMovies searchQuery={searchQuery} />
-        ) : (
-          <FeaturedMovies />
-        )}
-      </Suspense>
+      <header className="home-header">
+        <h1>Welcome to Rockstar Movies</h1>
+        <input
+          type="text"
+          placeholder="Search for movies"
+          onChange={(e) => debounceSetSearchQuery(e.target.value)}
+        />
+      </header>
+      <div className="home-content">
+        {/* TODO: add propper loading treatment */}
+        <Suspense fallback={<h1>Loading</h1>}>
+          {searchQuery ? (
+            // TODO: it would be a good idea to pass this as URL params so it's easier to go back to search
+            <SearchMovies searchQuery={searchQuery} />
+          ) : (
+            <FeaturedMovies />
+          )}
+        </Suspense>
+      </div>
     </>
   );
 }

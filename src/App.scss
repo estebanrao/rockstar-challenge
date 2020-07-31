@@ -1,7 +1,25 @@
 body {
+  background-color: #eee;
   font-family: 'Raleway', sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(5, 185px);
+  grid-gap: 15px;
+  margin: 0 auto;
 }
